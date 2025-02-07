@@ -3,7 +3,6 @@ import numpy as np
 
 @cuda.jit
 def scale_vector(x, alpha):
-  if alpha == 0: return np.zeros(len(x))
 
   thread_position = cuda.blockIdx.x * cuda.blockDim.x + cuda.threadIdx.x
 
